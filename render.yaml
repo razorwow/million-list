@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: million-list
+    runtime: node
+    plan: free
+    buildCommand: npm install --prefix backend && npm install --prefix frontend --include=dev && npm run build --prefix frontend
+    startCommand: npm start --prefix backend
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: BATCH_NORMAL_MS
+        value: "1000"
+      - key: BATCH_ADD_MS
+        value: "10000"

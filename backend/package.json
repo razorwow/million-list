@@ -1,0 +1,20 @@
+{
+  "name": "million-list-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Express backend: in-memory store, substring filter, request queue with dedup and batching",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test:logic": "node scripts/smoke.mjs",
+    "test:http": "node scripts/http-test.mjs",
+    "test": "node scripts/smoke.mjs && node scripts/http-test.mjs"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
